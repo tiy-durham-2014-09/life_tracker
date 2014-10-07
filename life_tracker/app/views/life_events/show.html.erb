@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Event title:</strong>
+  <%= @life_event.event_title %>
+</p>
+
+<p>
+  <strong>Event year:</strong>
+  <%= @life_event.event_year %>
+</p>
+
+<p>
+  <strong>Event description:</strong>
+  <%= @life_event.event_description %>
+</p>
+
+<%= link_to 'Edit', edit_life_event_path(@life_event) %> |
+<%= link_to 'Back', life_events_path %>
