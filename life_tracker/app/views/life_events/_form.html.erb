@@ -12,12 +12,16 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :person_id %><br>
+    <%= f.text_field :person_id %>
+  </div>
+  <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :year %><br>
-    <%= f.number_field :year %>
+    <%= f.label :date %><br>
+    <%= f.date_select :date, :start_year => Time.now.year - 120, :end_year => Time.now.year %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
