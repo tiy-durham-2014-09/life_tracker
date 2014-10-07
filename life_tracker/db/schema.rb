@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141006200623) do
+ActiveRecord::Schema.define(version: 20141007135652) do
 
   create_table "life_events", force: true do |t|
     t.string   "event"
@@ -27,6 +27,9 @@ ActiveRecord::Schema.define(version: 20141006200623) do
     t.integer  "ending_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
   end
 
 end
