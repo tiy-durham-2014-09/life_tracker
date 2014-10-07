@@ -8,7 +8,8 @@
 <p>
   <strong>Schools:</strong>
   <ul>
-    <% @person.schools.each do |school| %>
+    <% sorted_schools = @person.schools.sort_by { |s| s.start_year }.reverse %>
+    <% sorted_schools.each do |school| %>
     <li>
       <%= school.start_year %> to <%= school.end_year %>:
       <%= school.name %> in <%= school.city %>, <%= school.state %><% unless ["US", "USA", "America", "United States"].include? school.country %>, <%= school.country %>
@@ -21,7 +22,8 @@
 <p>
   <strong>Life Events:</strong>
 <ul>
-  <% @person.life_events.each do |event| %>
+  <% sorted_events = @person.life_events.sort_by { |e| e.date }.reverse %>
+  <% sorted_events.each do |event| %>
       <li>
           <%= event.date %>: <%= event.title %>
           <p><%= event.description %></p>
