@@ -7,6 +7,8 @@
 <br>
 <p>
   <strong>Schools:</strong>
+  <%= link_to 'Add School', new_school_path %>
+
   <ul>
     <% sorted_schools = @person.schools.sort_by { |s| s.start_year }.reverse %>
     <% sorted_schools.each do |school| %>
@@ -21,6 +23,7 @@
 <br>
 <p>
   <strong>Life Events:</strong>
+<%= link_to 'Add Event', new_life_event_path %>
 <ul>
   <% sorted_events = @person.life_events.sort_by { |e| e.date }.reverse %>
   <% sorted_events.each do |event| %>
