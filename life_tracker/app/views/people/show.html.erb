@@ -25,7 +25,8 @@
   <strong>Life Events:</strong>
 <%= link_to 'Add Event', new_life_event_path %>
 <ul>
-  <% sorted_events = @person.life_events.sort_by { |e| e.date }.reverse %>
+  <% chrono_events = @person.life_events.sort_by { |e| e.created_at }.reverse %>
+  <% sorted_events = chrono_events.sort_by { |e| e.date }.reverse %>
   <% sorted_events.each do |event| %>
       <li>
           <%= event.date %>: <%= event.title %>
