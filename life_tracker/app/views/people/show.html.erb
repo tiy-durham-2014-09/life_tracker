@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @person.name %>
+</p>
+
+<p>
+  <strong>Schools:</strong>
+  <ul>
+    <% @person.schools.each do |schools| %>
+      <li>
+        <%= schools.name %></li>
+        <li><%= schools.beginningYear %> to
+        <%= schools.endingYear %></li>
+      </li>
+    <% end %>
+  </ul>
+</p>
+
+<p>
+  <strong>Life_events:</strong>
+  <ul>
+    <% @person.life_events.each do |life_events| %>
+      <li>
+        <%= life_events.title %></li>
+        <li><%= life_events.year %></li>
+        <li><%= life_events.description %>
+      </li>
+    <% end %>
+  </ul>
+</p>
+
+<%= link_to 'New School', new_school_path %><br>
+<%= link_to 'New Life event', new_life_event_path %><br>
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>
