@@ -1,0 +1,29 @@
+<h1>Listing school_tracks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>School name</th>
+      <th>Year school began</th>
+      <th>Year school ended</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @school_tracks.each do |school_track| %>
+      <tr>
+        <td><%= school_track.school_name %></td>
+        <td><%= school_track.year_school_began %></td>
+        <td><%= school_track.year_school_ended %></td>
+        <td><%= link_to 'Show', school_track %></td>
+        <td><%= link_to 'Edit', edit_school_track_path(school_track) %></td>
+        <td><%= link_to 'Destroy', school_track, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New School track', new_school_track_path %>
