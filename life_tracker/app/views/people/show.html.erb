@@ -5,5 +5,19 @@
   <%= @person.name %>
 </p>
 
+<p>
+  <strong>Schools:</strong>
+  <ul>
+    
+    <% @person.schools.each do |school| %>
+    <li>
+      <%= school.start_year %> to <%= school.end_year %>:
+      <%= school.name %> in <%= school.city %>, <%= school.state %><% unless ["US", "USA", "America", "United States"].include? school.country %>, <%= school.country %>
+      <% end %>
+    </li>
+    <% end %>
+  </ul>
+</p>
+
 <%= link_to 'Edit', edit_person_path(@person) %> |
 <%= link_to 'Back', people_path %>
