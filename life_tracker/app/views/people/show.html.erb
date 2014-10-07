@@ -4,11 +4,10 @@
   <strong>Name:</strong>
   <%= @person.name %>
 </p>
-
+<br>
 <p>
   <strong>Schools:</strong>
   <ul>
-    
     <% @person.schools.each do |school| %>
     <li>
       <%= school.start_year %> to <%= school.end_year %>:
@@ -17,6 +16,19 @@
     </li>
     <% end %>
   </ul>
+</p>
+<br>
+<p>
+  <strong>Life Events:</strong>
+<ul>
+  <% @person.life_events.each do |event| %>
+      <li>
+          <%= event.date %>: <%= event.title %>
+          <p><%= event.description %></p>
+        <br>
+      </li>
+  <% end %>
+</ul>
 </p>
 
 <%= link_to 'Edit', edit_person_path(@person) %> |
