@@ -3,6 +3,8 @@
 <table>
   <thead>
     <tr>
+      <th>Person ID</th>
+      <th>Name</th>
       <th>Title</th>
       <th>Year</th>
       <th>Description</th>
@@ -13,6 +15,12 @@
   <tbody>
     <% @life_events.each do |life_event| %>
       <tr>
+        <td><%= life_event.person_id %></td>
+        <td>
+          <% if life_event.person %>
+            <%= link_to life_event.person, life_event.person %>
+          <% end %>
+        </td>
         <td><%= life_event.title %></td>
         <td><%= life_event.year %></td>
         <td><%= life_event.description %></td>

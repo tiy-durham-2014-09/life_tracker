@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @person.name %>
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Year</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% feed = Hash.new %>
+    <% @person.life_events.each do |life_events| %>
+        <% feed[["Life Event:", life_events.title]] = life_events.year %>
+    <% end %>
+    <% @person.schools.each do |schools| %>
+        <% feed[["School:", schools.name]] = schools.beginning_year %>
+    <% end %>
+    <%feed = feed.sort_by { |event, year| year } %>
+
+    <% feed.each do |key, value| %>
+      <tr>
+        <td><%= key[0] %></td>
+        <td><%= key[1] %></td>
+        <td><%= value %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>
