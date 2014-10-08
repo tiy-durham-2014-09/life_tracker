@@ -1,0 +1,15 @@
+<h1>These are your life events</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+
+  <% @life_events.each do |life_event| %>
+    <tr>
+      <td><%= life_event.title %></td>
+      <td><%= life_event.date %></td>
+    </tr>
+  <% end %>
+</table>
