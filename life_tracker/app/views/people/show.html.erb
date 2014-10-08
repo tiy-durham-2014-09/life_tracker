@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @person.name %>
+</p>
+<p>
+  <h2>LIFE EVENTS</h2>
+  <ul>
+    <% @person.life_events.order(:year).each do |life_events| %>
+      <li>
+        Title: <%= life_events.title %></li>
+        <li>Year: <%= life_events.year %></li>
+        <li>Description: <%= life_events.description %>
+      </li>
+      <br>
+    <% end %>
+  </ul>
+</p>
+
+<h2> SCHOOL(S) </h2>
+
+  <% @person.schools.order(:endingYear).reverse_order.each do |school| %>
+    <ul>
+      <li><%= school.name %></li>
+      <li><%= school.beginningYear %></li>
+      to
+      <li><%= school.endingYear %></li>
+    </ul>
+  <% end %>
+
+
+<%= link_to 'New School', new_school_path %><br>
+<%= link_to 'New Life event', new_life_event_path %><br>
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>

@@ -1,0 +1,59 @@
+<%= form_for(@life_event) do |f| %>
+<% if @life_event.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@life_event.errors.count, "error") %> prohibited this life_event from being saved:</h2>
+
+  <ul>
+    <% @life_event.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<form>
+  <div class="row">
+    <div class="small-4 columns">
+      <label>Person
+        <div class="field">
+  <%= f.collection_select :person_id, Person.all, :id, :name, :include_blank => true %>
+</label>
+</div>
+</div>
+</div>
+
+<div class="row">
+    <div class="small-4 columns">
+      <label>Title
+        <div class="field">
+          <%= f.text_field :title %>
+        </div>
+      </label>
+    </div>
+  </div>
+
+<div class="row">
+    <div class="small-4 columns">
+      <label>Year
+        <div class="field">
+          <%= f.text_field :year %>
+        </div>
+      </label>
+    </div>
+  </div>
+
+<div class="row">
+    <div class="large-12 columns">
+      <label>Description
+        <div class="Description">
+          <%= f.text_area :description %>
+        </div>
+      </label>
+    </div>
+  </div>
+
+<div class="actions">
+  <%= f.submit %>
+</div>
+
+<% end %>
