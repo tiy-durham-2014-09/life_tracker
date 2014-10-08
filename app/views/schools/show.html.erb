@@ -15,5 +15,25 @@
   <%= @school.ending_year %>
 </p>
 
+<p>
+  <strong>City:</strong>
+  <%= @school.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @school.state %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @school.country %>
+</p>
+
+<p>
+  <strong>Postal Code:</strong>
+  <%= @school.postal_code %>
+</p>
+
 <%= link_to 'Edit', edit_school_path(@school) %> |
 <%= link_to 'Back', schools_path %>
