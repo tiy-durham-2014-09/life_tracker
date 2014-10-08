@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @person.name %>
+</p>
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>
+
+<p>
+  <strong>Schools:</strong>
+    <ul>
+      <% if @person.schools==nil? %>
+          <%= link_to "New", new_school_path %>
+
+      <% else %>
+          <% @person.schools.reverse_order.each do |school| %>
+              <li>
+                <%= school.name %>: <%= school.beginning_year %> to <%= school.ending_year %>
+                <%= link_to "Edit", edit_school_path(school) %>
+                <%= link_to "New", new_school_path(school) %>
+              </li>
+          <% end %>
+
+      <% end %>
+    </ul>
+</p>
+
+<p>
+  <strong>Life Events:</strong>
+    <ul>
+      <% if @person.life_events==nil? %>
+          <%= link_to "New", new_life_event_path %>
+
+      <% else %>
+          <% @person.life_events.reverse_order.each do |life_event| %>
+              <li>
+                <%= life_event.title %>: <%= life_event.year %> to <%= life_event.description %>
+                <%= link_to "Edit", edit_life_event_path(life_event) %>
+                <%= link_to "New", new_life_event_path(life_event) %>
+              </li>
+          <% end %>
+       <% end %>
+    </ul>
+</p>
