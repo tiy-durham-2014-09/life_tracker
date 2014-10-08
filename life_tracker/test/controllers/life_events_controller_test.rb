@@ -18,7 +18,7 @@ class LifeEventsControllerTest < ActionController::TestCase
 
   test "should create life_event" do
     assert_difference('LifeEvent.count') do
-      post :create, life_event: { end_year: @life_event.end_year, event_desc: @life_event.event_desc, start_year: @life_event.start_year }
+      post :create, life_event: { city: @life_event.city, country: @life_event.country, date: @life_event.date, name: @life_event.name, person_id: @life_event.person_id, state: @life_event.state }
     end
 
     assert_redirected_to life_event_path(assigns(:life_event))
@@ -35,7 +35,7 @@ class LifeEventsControllerTest < ActionController::TestCase
   end
 
   test "should update life_event" do
-    patch :update, id: @life_event, life_event: { end_year: @life_event.end_year, event_desc: @life_event.event_desc, start_year: @life_event.start_year }
+    patch :update, id: @life_event, life_event: { city: @life_event.city, country: @life_event.country, date: @life_event.date, name: @life_event.name, person_id: @life_event.person_id, state: @life_event.state }
     assert_redirected_to life_event_path(assigns(:life_event))
   end
 

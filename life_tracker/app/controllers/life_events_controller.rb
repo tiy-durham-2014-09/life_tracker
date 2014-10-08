@@ -69,6 +69,6 @@ class LifeEventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def life_event_params
-      params.require(:life_event).permit(:event_desc, :start_year, :end_year)
+      params.require(:life_event).permit(:name, :date, :person_id, :city, :state, :country)
     end
 end
