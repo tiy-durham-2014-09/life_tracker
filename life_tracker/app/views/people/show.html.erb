@@ -5,8 +5,36 @@
   <%= @person.name %>
 </p>
 
-School(s) attended: <!--code for displaying owned schools needed here-->
-<br>Life events: <!--code for displaying owned life events needed here-->
+<!--code for displaying owned schools needed here-->
+
+<p>
+  <strong>School(s) attended:</strong>
+<ul>
+  <% @person.schools.each do |school| %>
+      <li>
+        <%= school.name %><!--: <%= school.name %>-->
+        <%= link_to "Edit", edit_school_path(school) %>
+      </li>
+  <% end %>
+</ul>
+
+
+
+
+
+
+
+
+<!--<strong>Life event(s):</strong>
+<ul>
+  <% @person.life_events.each do |life_event| %>
+      <li>
+        <%= life_event.name %>: <%= life_event.title %>
+        <%= link_to "Edit", edit_life_event_path(life_event) %>
+      </li>
+  <% end %>
+</ul>
+</p>-->
 <br>
 <br>
 <div class="footer">
