@@ -1,4 +1,6 @@
 class School < ActiveRecord::Base
+  belongs_to :person
+  School.order(:beginning_date)
   validates :school_name, presence: true
   validates :beginning_date, presence: true
   validates :ending_date, presence: true
