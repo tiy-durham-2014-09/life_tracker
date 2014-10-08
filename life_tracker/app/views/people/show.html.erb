@@ -5,30 +5,26 @@
   <%= @person.name %>
 </p>
 
+
 <p>
-  <strong>LifeEvents:</strong>
+  <strong>Life Events:</strong>
   <ul>
-    <% @person.life_event.each do |life_event| %>
+    <% @person.life_events.each do |life_event| %>
       <li>
-        <%= life_event.name %>: <%= life_event.number %>
-        <%= link_to "Edit", edit_life_event_path(life_event) %>
+        <%= life_event.title %>: <%= life_event.date %>: <%= life_event.description %>
+        <%= link_to "Edit", edit_person_path(life_event) %>
       </li>
     <% end %>
   </ul>
 </p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @person.name %>
-</p>
-
-<p>
-  <strong>:</strong>
+  <strong>Life Events:</strong>
   <ul>
-    <% @person.school.each do |life_event| %>
+    <% @person.schools.each do |school| %>
       <li>
-        <%= school %>: <%= school.number %>
-        <%= link_to "Edit", edit_life_event_path(life_event) %>
+        <%= school.title %>: <%= school.start_date %>: <%= school.end_date %>
+        <%= link_to "Edit", edit_person_path(school) %>
       </li>
     <% end %>
   </ul>
