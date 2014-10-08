@@ -3,6 +3,10 @@ table {
   margin: ($base-spacing / 2) 0;
   table-layout: fixed;
   width: 100%;
+  color: white;
+  @include background (linear-gradient(to right, #003366, #00CCFF) );
+
+
 }
 
 th {
@@ -10,11 +14,14 @@ th {
   font-weight: bold;
   padding: ($base-spacing / 2) 0;
   text-align: left;
+  width: 130%;
+  color: white;
 }
 
 td {
-  border-bottom: $base-border;
+  border: $base-border;
   padding: ($base-spacing / 2) 0;
+  color: white;
 }
 
 tr,

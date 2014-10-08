@@ -39,8 +39,8 @@ $base-font-color: $dark-gray;
 $base-accent-color: $blue;
 
 // Link Colors
-$base-link-color: $base-accent-color;
-$hover-link-color: darken($base-accent-color, 15);
+$base-link-color: yellow;
+$hover-link-color: lighten($base-link-color, 100);
 $base-button-color: $base-link-color;
 $hover-button-color: $hover-link-color;
 
@@ -52,7 +52,7 @@ $success-color: $light-green;
 
 // Border color
 $base-border-color: $light-gray;
-$base-border: 1px solid $base-border-color;
+$base-border: 1px ridge $base-border-color;
 
 // Forms
 $form-border-color: $base-border-color;
