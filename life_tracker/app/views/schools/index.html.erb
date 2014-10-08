@@ -17,17 +17,16 @@
   <tbody>
     <% @schools.each do |school| %>
     <tr>
-      <td>
-        <% if school.person %>
-        <%= link_to school.person, school.person %>
-        <% end %>
         <td><%= school.school_name %></td>
         <td><%= school.beginning_date %></td>
         <td><%= school.ending_date %></td>
         <td><%= school.city %></td>
         <td><%= school.state %></td>
         <td><%= school.country %></td>
-        <td><%= school.person %></td>
+        <td>
+          <% if school.person %>
+          <%= link_to school.person, school.person %>
+          <% end %>
         <td><%= link_to 'Show', school %></td>
         <td><%= link_to 'Edit', edit_school_path(school) %></td>
         <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>

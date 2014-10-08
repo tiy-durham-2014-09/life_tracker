@@ -14,14 +14,13 @@
   <tbody>
     <% @life_events.each do |life_event| %>
     <tr>
-      <td>
-        <% if life_event.person %>
-        <%= link_to life_event.person, life_event.person %>
-        <% end %>
         <td><%= life_event.event %></td>
         <td><%= life_event.date %></td>
         <td><%= life_event.description %></td>
-        <td><%= life_event.person %></td>
+        <td>
+          <% if life_event.person %>
+          <%= link_to life_event.person, life_event.person %>
+          <% end %>
         <td><%= link_to 'Show', life_event %></td>
         <td><%= link_to 'Edit', edit_life_event_path(life_event) %></td>
         <td><%= link_to 'Destroy', life_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
