@@ -2,14 +2,15 @@
 
 <h1><%= link_to 'Allo', welcome_index_path %></h1>
 
-
-<p>
-  <strong>Name:</strong>
-  <%= @person.name %>
-</p>
 <br>
 <p>
-  <strong>Schools:</strong>
+  <h2>
+    <%= @person.name %>
+  </h2>
+
+</p>
+<p>
+  <strong>Schools: </strong>
   <%= link_to 'Add School', new_school_path %>
 
   <ul>
@@ -23,9 +24,8 @@
     <% end %>
   </ul>
 </p>
-<br>
 <p>
-  <strong>Life Events:</strong>
+  <strong>Life Events: </strong>
 <%= link_to 'Add Event', new_life_event_path %>
 <ul>
   <% chrono_events = @person.life_events.sort_by { |e| e.created_at }.reverse %>
