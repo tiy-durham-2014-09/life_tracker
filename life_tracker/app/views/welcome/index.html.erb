@@ -10,9 +10,8 @@
   <% chrono_events = LifeEvent.all.sort_by { |e| e.created_at }.reverse %>
   <% chrono_events.each do |e| %>
     <li>
-      <%#= Person[e.person_id].name %> Someone just
-      <%#= link_to e.title, controller: 'life_event' %>
-      <%= e.title %>
+      <%= e.person.name %> just
+      <%= link_to e.title, life_event_path(e.id) %>
     </li>
   <% end %>
 
@@ -20,6 +19,6 @@
   <% chrono_schools = School.all.sort_by { |e| e.created_at }.reverse %>
   <% chrono_schools.each do |s| %>
     <li>
-      Someone attended <%= s.name %>
+      <%= s.person.name %> attended <%= s.name %> in <%= s.start_year %>
     </li>
   <% end %>
