@@ -1,0 +1,110 @@
+<% max_listings = 3 %>
+<% listing_count = 0 %>
+
+<h1>Latest People</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+
+
+  <% @people.reverse_order.each do |person| %>
+      <tr>
+        <td><%= person.name %></td>
+        <td><%= link_to 'Show', person %></td>
+        <td><%= link_to 'Edit', edit_person_path(person) %></td>
+        <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% listing_count += 1 %>
+      <% break if listing_count == max_listings %>
+  <% end %>
+  </tbody>
+</table>
+
+
+<% listing_count = 0 %>
+
+<h1>Latest Schools</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Person</th>
+    <th>School</th>
+    <th>Beg year</th>
+    <th>End year</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Country</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @schools.reverse_order.each do |school| %>
+      <tr>
+        <td>
+          <% if school.person %>
+              <%= link_to school.person, school.person %>
+          <% end %>
+        </td>
+        <td><%= school.name %></td>
+        <td><%= school.beginning_year %></td>
+        <td><%= school.ending_year %></td>
+        <td><%= school.city %></td>
+        <td><%= school.state %></td>
+        <td><%= school.country %></td>
+        <td><%= link_to 'Show', school_path(school) %></td>
+        <td><%= link_to 'Edit', edit_school_path(school) %></td>
+        <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+
+      <% listing_count += 1 %>
+      <% break if listing_count == max_listings %>
+  <% end %>
+  </tbody>
+</table>
+
+
+<% listing_count = 0 %>
+
+<h1>Latest Life Events</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Person</th>
+    <th>Event Title</th>
+    <th>Year</th>
+    <th>Desc</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @life_events.reverse_order.each do |life_event| %>
+      <tr>
+        <td>
+          <% if life_event.person %>
+              <%= link_to life_event.person, life_event.person %>
+          <% end %>
+        </td>
+        <td><%= life_event.title %></td>
+        <td><%= life_event.year %></td>
+        <td><%= life_event.description %></td>
+        <td><%= link_to 'Show', life_event %></td>
+        <td><%= link_to 'Edit', edit_life_event_path(life_event) %></td>
+        <td><%= link_to 'Destroy', life_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+
+      <% listing_count += 1 %>
+      <% break if listing_count == max_listings %>
+  <% end %>
+  </tbody>
+</table>
