@@ -4,7 +4,9 @@ class SchoolsController < ApplicationController
   # GET /schools
   # GET /schools.json
   def index
+    @people = Person.all
     @schools = School.all
+    @life_events = LifeEvent.all
   end
 
   # GET /schools/1
@@ -69,6 +71,6 @@ class SchoolsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def school_params
-      params.require(:school).permit(:name, :beginning_year, :ending_year)
+      params.require(:school).permit(:name, :beginning_year, :ending_year, :city, :state, :country, :person_id)
     end
 end

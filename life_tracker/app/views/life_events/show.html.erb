@@ -1,5 +1,14 @@
 <p id="notice"><%= notice %></p>
 
+<strong>Person ID:</strong>
+<%= @life_event.person_id %>
+</p>
+<% if @life_event.person %>
+<p>
+<strong>Person:</strong>
+<%=link_to @life_event.person, @life_event.person %>
+</p>
+<% end %>
 <p>
   <strong>Title:</strong>
   <%= @life_event.title %>

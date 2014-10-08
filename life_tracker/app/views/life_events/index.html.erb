@@ -13,6 +13,11 @@
   <tbody>
     <% @life_events.each do |life_event| %>
       <tr>
+        <td>
+          <% if life_event.person %>
+            <%= link_to life_event.person, life_event.person %>
+          <% end %>
+        </td>
         <td><%= life_event.title %></td>
         <td><%= life_event.year %></td>
         <td><%= life_event.description %></td>
