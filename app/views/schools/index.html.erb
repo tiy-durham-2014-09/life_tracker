@@ -28,7 +28,7 @@
         <td><%= school.city %></td>
         <td><%= school.state %></td>
         <td><%= school.country %></td>
-        <td><%= link_to 'Show', school %></td>
+        <td><%= link_to 'Show', person_school_path(school.person) %></td>
         <td><%= link_to 'Edit', edit_school_path(school) %></td>
         <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

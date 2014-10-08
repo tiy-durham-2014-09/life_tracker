@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
+  resources :comments
+
   resources :people
+  resources :life_events
+  resources :schools
 
   get 'welcome/index'
 
-  resources :life_events
-
-  resources :schools
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

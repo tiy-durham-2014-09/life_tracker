@@ -27,7 +27,6 @@
   </tbody>
 </table>
 
-<%= link_to 'New Person', new_person_path %>
 
 <% listing_count = 0 %>
 
@@ -61,7 +60,7 @@
         <td><%= school.city %></td>
         <td><%= school.state %></td>
         <td><%= school.country %></td>
-        <td><%= link_to 'Show', school %></td>
+        <td><%= link_to 'Show', school_path(school) %></td>
         <td><%= link_to 'Edit', edit_school_path(school) %></td>
         <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -72,9 +71,6 @@
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New School', new_school_path %>
 
 <% listing_count = 0 %>
 
@@ -113,6 +109,3 @@
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Life event', new_life_event_path %>
