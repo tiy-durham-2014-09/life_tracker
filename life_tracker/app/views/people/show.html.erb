@@ -8,7 +8,7 @@
 <p>
   <strong>School:</strong>
   <ul>
-  <% @person.schools.each do |school| %>
+  <% @person.schools.order(:beginning_date).each do |school| %>
 
   <li>
     <%= school.school_name %>: <%= school.beginning_date %> - <%= school.ending_date %>
@@ -21,9 +21,9 @@
 <p>
   <strong>Life Events:</strong>
   <ul>
-  <% @person.life_events.each do |life_event| %>
+  <% @person.life_events.order(:date).each do |life_event| %>
   <li>
-    <%= life_event.event %>: <%= life_event.description %>
+    <%= life_event.event %>, <%= life_event.date %>: <%= life_event.description %>
     <%= link_to "Edit", edit_life_event_path(life_event) %>
   </li>
   <% end %>
