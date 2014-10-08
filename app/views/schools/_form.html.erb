@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :person_id %><br>
+    <%= f.collection_select :person_id, Person.all, :id, :name, :include_blank => true %>
+  </div>
+  <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
@@ -22,6 +26,19 @@
   <div class="field">
     <%= f.label :ending_year %><br>
     <%= f.number_field :ending_year %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  <div class="field">
+     <%= f.label :state %><br>
+     <%= f.text_field :state %>
+  <div class="field">
+    <%= f.label :country %><br>
+    <%= f.text_field :country %>
+
+  </div>
+   </div>
   </div>
   <div class="actions">
     <%= f.submit %>

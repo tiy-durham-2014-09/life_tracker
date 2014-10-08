@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'home_controller/index'
+  resources :people
+
+  # get 'home_controller/index'
 
   resources :life_events
 

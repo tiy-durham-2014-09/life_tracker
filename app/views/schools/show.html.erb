@@ -1,19 +1,42 @@
 <p id="notice"><%= notice %></p>
+<div class="show">
+  <p>
+    <strong>Person ID:</strong>
+    <%= @school.person_id %>
+  </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @school.name %>
-</p>
+  <% if @school.person %>
+  <p>
+    <strong>Person:</strong>
+    <%= link_to @school.person, @school.person %>
+  </p>
+  <% end %>
+  <p>
+    <strong>Name:</strong>
+    <%= @school.name %>
+  </p>
 
-<p>
-  <strong>Beginning year:</strong>
-  <%= @school.beginning_year %>
-</p>
+  <p>
+    <strong>Beginning year:</strong>
+    <%= @school.beginning_year %>
+  </p>
 
-<p>
-  <strong>Ending year:</strong>
-  <%= @school.ending_year %>
-</p>
-
+  <p>
+    <strong>Ending year:</strong>
+    <%= @school.ending_year %>
+  </p>
+  <p>
+    <strong>City:</strong>
+    <%= @school.city %>
+  </p>
+  <p>
+    <strong>State:</strong>
+    <%= @school.state %>
+  </p>
+  <p>
+    <strong>Country:</strong>
+    <%= @school.country %>
+  </p>
+</div>
 <%= link_to 'Edit', edit_school_path(@school) %> |
 <%= link_to 'Back', schools_path %>

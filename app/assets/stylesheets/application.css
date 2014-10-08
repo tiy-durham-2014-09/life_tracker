@@ -1,15 +1,72 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any styles
+* defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+* file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+
+body {
+  background-color: #a8b5ae;
+  padding: 0;
+  margin: 0;
+  font-family: arial,
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.5;
+  cursor: auto;
+  text-align: center;
+}
+h1 {
+  color: white;
+  font-family: Bebas, sans-serif;
+  letter-spacing: 2px;
+  font-size: 22px;
+  text-shadow: 1px 1px 1px #c06960,
+  1px 1px 1px #000;
+}
+h1 .title {
+  font-family: Orange Juice, serif;
+  font-weight: bold;
+  letter-spacing: 5px;
+  font-size: 60px;
+  text-align: center;
+}
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+form {
+  margin-left: auto;
+  margin-right: auto;
+  width: 190px;
+}
+th {
+  font-family: Bebas, Arial;
+  font-size: 14px !important;
+  color: #5a5a5a !important;
+  text-align: center !important;
+  background-color: #e9e7e2;
+
+}
+td {
+  background-color: #e9e7e2;
+  color: #c06960 !important;
+  font-family: Bebas;
+  letter-spacing: 2px;
+}
+.show {
+  color: white !important;
+}
+/*Fonts*/
+@font-face { font-family: JuneBug; src: url('JUNEBUG.TTF'); }
+@font-face { font-family: Orange Juice; src: url('orangejuice.TTF'); }
+@font-face { font-family: Bebas; src: url('bebas.TTF'); }

@@ -2,7 +2,7 @@
   <% if @life_event.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@life_event.errors.count, "error") %> prohibited this life_event from being saved:</h2>
-
+<form>
       <ul>
       <% @life_event.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -12,23 +12,25 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :person_id %><br>
+    <%= f.collection_select :person_id, Person.all, :id, :name, :include_blank => true %>
+  </div>
+  <div class="field">
     <%= f.label :title %><br>
-    <%= f.label "enter a life event here" %><br>
     <%= f.text_field :title %>
   </div>
   <div class="field">
     <%= f.label :year %><br>
-    <%= f.label "Enter the year it occured here" %><br>
 
     <%= f.number_field :year %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.label "If you so desire, enter a description (max 140 char)" %><br>
 
     <%= f.text_field :description %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
+</form>
 <% end %>
