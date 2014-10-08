@@ -1,6 +1,103 @@
-<h1> Greetings </h1>
+<h1> Home </h1>
+<p></p>
 
-<h1>Listing people</h1>
+<h1>Recently Added</h1>
+<p></p>
+<h3>People</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Created</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @people.order(created_at: :desc).each do |person| %>
+    <tr>
+      <td><%= person.name %></td>
+      <td><%= person.created_at %></td>
+      <td><%= link_to 'Show', person %></td>
+      <td><%= link_to 'Edit', edit_person_path(person) %></td>
+      <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h3>Schools</h3>
+<table>
+  <thead>
+    <tr>
+      <th>School name</th>
+      <th>Created</th>
+      <th>Beginning date</th>
+      <th>Ending date</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Country</th>
+      <th>Person</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @schools.order(created_at: :desc).each do |school| %>
+    <tr>
+      <td><%= school.school_name %></td>
+      <td><%= school.created_at %></td>
+      <td><%= school.beginning_date %></td>
+      <td><%= school.ending_date %></td>
+      <td><%= school.city %></td>
+      <td><%= school.state %></td>
+      <td><%= school.country %></td>
+      <td><%= school.person %></td>
+      <td><%= link_to 'Show', school %></td>
+      <td><%= link_to 'Edit', edit_school_path(school) %></td>
+      <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h3>Life Events</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Created</th>
+      <th>Date</th>
+      <th>Description</th>
+      <th>Person</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @life_events.order(created_at: :desc).each do |life_event| %>
+    <tr>
+      <td><%= life_event.event %></td>
+      <td><%= life_event.created_at %></td>
+      <td><%= life_event.date %></td>
+      <td><%= life_event.description %></td>
+      <td><%= life_event.person %></td>
+      <td><%= link_to 'Show', life_event %></td>
+      <td><%= link_to 'Edit', edit_life_event_path(life_event) %></td>
+      <td><%= link_to 'Destroy', life_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<!--
+
+<h1>Listing People</h1>
 
 <table>
   <thead>
@@ -24,7 +121,7 @@
 
 <br>
 
-<h1>Listing schools</h1>
+<h1>Listing Schools</h1>
 
 <table>
   <thead>
@@ -60,7 +157,7 @@
 
 <br>
 
-<h1>Listing life_events</h1>
+<h1>Listing Life Events</h1>
 
 <table>
   <thead>
@@ -88,7 +185,7 @@
   </tbody>
 </table>
 
-<br>
+<br> -->
 
 
 <%= link_to 'Schools', schools_path %> |
