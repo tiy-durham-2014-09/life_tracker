@@ -1,5 +1,5 @@
 class School < ActiveRecord::Base
-   belongs_to :people
+   belongs_to :person
    def to_s
      name
    end
