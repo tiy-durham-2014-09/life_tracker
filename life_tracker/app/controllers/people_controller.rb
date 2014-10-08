@@ -4,7 +4,9 @@ class PeopleController < ApplicationController
   # GET /people
   # GET /people.json
   def index
+    @schools = School.all
     @people = Person.all
+    @life_events = LifeEvent.all
   end
 
   # GET /people/1

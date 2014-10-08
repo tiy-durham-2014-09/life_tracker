@@ -11,26 +11,52 @@
     </div>
   <% end %>
 
-
-
-    <div class="field">
-    <%= f.label :person_id %><br>
+<div class="form">
+  <form>
+    <div class="row">
+      <div class="small-4 columns">
+        <label>Person
+          <div class="field">
     <%= f.collection_select :person_id, Person.all, :id, :name, :include_blank => true %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :beginningYear %><br>
-    <%= f.number_field :beginningYear %>
-  </div>
-  <div class="field">
-    <%= f.label :endingYear %><br>
-    <%= f.number_field :endingYear %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  </label>
+        </div>
+      </div>
+    </div>
+
+  <div class="row">
+      <div class="small-4 columns">
+        <label>Name
+          <div class="field">
+            <%= f.text_field :name %>
+          </div>
+        </label>
+      </div>
+    </div>
+
+  <div class="row">
+      <div class="small-4 columns">
+        <label>Beginning Year
+          <div class="field">
+            <%= f.text_field :beginningYear %>
+          </div>
+        </label>
+      </div>
+    </div>
+
+  <div class="row">
+      <div class="small-4 columns">
+        <label>Ending Year
+          <div class="Description">
+            <%= f.text_field :endingYear %>
+          </div>
+        </label>
+      </div>
+    </div>
+</form>
+</div>
+
+<div class="actions">
+  <%= f.submit %>
+</div>
+
 <% end %>

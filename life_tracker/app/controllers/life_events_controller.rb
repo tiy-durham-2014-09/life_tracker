@@ -4,6 +4,8 @@ class LifeEventsController < ApplicationController
   # GET /life_events
   # GET /life_events.json
   def index
+    @schools = School.all
+    @people = Person.all
     @life_events = LifeEvent.all
   end
 

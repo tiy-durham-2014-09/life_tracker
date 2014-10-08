@@ -11,25 +11,46 @@
 </div>
 <% end %>
 
-<div class="field">
-  <%= f.label :person_id %><br>
+<form>
+  <div class="row">
+    <div class="small-4 columns">
+      <label>Person
+        <div class="field">
   <%= f.collection_select :person_id, Person.all, :id, :name, :include_blank => true %>
+</label>
+</div>
+</div>
 </div>
 
-<div class="field">
-  <%= f.label :title %><br>
-  <%= f.text_field :title %>
-</div>
+<div class="row">
+    <div class="small-4 columns">
+      <label>Title
+        <div class="field">
+          <%= f.text_field :title %>
+        </div>
+      </label>
+    </div>
+  </div>
 
-<div class="field">
-  <%= f.label :year %><br>
-  <%= f.number_field :year %>
-</div>
+<div class="row">
+    <div class="small-4 columns">
+      <label>Year
+        <div class="field">
+          <%= f.text_field :year %>
+        </div>
+      </label>
+    </div>
+  </div>
 
-<div class="field">
-  <%= f.label :description %><br>
-  <%= f.text_field :description, :size => 100 %>
-</div>
+<div class="row">
+    <div class="large-12 columns">
+      <label>Description
+        <div class="Description">
+          <%= f.text_area :description %>
+        </div>
+      </label>
+    </div>
+  </div>
 
 <div class="actions">
   <%= f.submit %>
