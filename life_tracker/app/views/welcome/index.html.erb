@@ -1,23 +1,25 @@
 <h1>Allo</h1>
 <br>
 <h3>This is your life.</h3>
-<p>This is Allo, the social network open to any Person, as long as you're a student at The Iron Yard Academy Durham during Fall 2014. And maybe Clinton.</p>
+<p>This is Allo, the social network open to any Person, anywhere. As long as you're a student at The Iron Yard Academy in Durham during Fall 2014. And maybe Clinton.</p>
 <p>Allo isn't like other social networks.  In fact, it's a student project, so you don't have to worry about your information being sold to advertisers.  Ever. Probably.</p>
 <h3><%= link_to 'Browse People', controller: 'people' %></h3>
 <br>
 
 <h2>Event Feed</h2>
   <% chrono_events = LifeEvent.all.sort_by { |e| e.created_at }.reverse %>
-  <% chrono_events.each do |e| %>
+  <% short_events = chrono_events.first(10) %>
+  <% short_events.each do |e| %>
     <li>
-      <%= e.person.name %> just
+      <%= e.person.name %> just added
       <%= link_to e.title, life_event_path(e.id) %>
     </li>
   <% end %>
 
 <h2>School Feed</h2>
   <% chrono_schools = School.all.sort_by { |e| e.created_at }.reverse %>
-  <% chrono_schools.each do |s| %>
+  <% short_schools = chrono_schools.first(5) %>
+  <% short_schools.each do |s| %>
     <li>
       <%= s.person.name %> attended <%= s.name %> in <%= s.start_year %>
     </li>
