@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+<h1><%= link_to 'Allo', welcome_index_path %></h1>
+
+
+<p>
+  <strong>Person:</strong>
+  <%= @life_event.person.name %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @school.name %>
+</p>
+
+<p>
+  <strong>Start year:</strong>
+  <%= @school.start_year %>
+</p>
+
+<p>
+  <strong>End year:</strong>
+  <%= @school.end_year %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @school.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @school.state %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @school.country %>
+</p>
+
+<%= link_to 'Edit', edit_school_path(@school) %> |
+<%= link_to 'Back', schools_path %>

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= link_to 'Allo', welcome_index_path %></h1>
+
+<br>
+<p>
+  <h2>
+    <%= @person.name %>
+  </h2>
+
+</p>
+<p>
+  <strong>Schools: </strong>
+  <%= link_to 'Add School', new_school_path %>
+
+  <ul>
+    <% sorted_schools = @person.schools.sort_by { |s| s.start_year }.reverse %>
+    <% sorted_schools.each do |school| %>
+    <li>
+      <%= school.start_year %> to <%= school.end_year %>:
+      <%= school.name %> in <%= school.city %>, <%= school.state %><% unless ["US", "USA", "America", "United States"].include? school.country %>, <%= school.country %>
+      <% end %>
+    </li>
+    <% end %>
+  </ul>
+</p>
+<p>
+  <strong>Life Events: </strong>
+<%= link_to 'Add Event', new_life_event_path %>
+<ul>
+  <% chrono_events = @person.life_events.sort_by { |e| e.created_at }.reverse %>
+  <% sorted_events = chrono_events.sort_by { |e| e.date }.reverse %>
+  <% sorted_events.each do |event| %>
+      <li>
+          <%= event.date %>: <%= event.title %>
+          <p><%= event.description %></p>
+        <br>
+      </li>
+  <% end %>
+</ul>
+</p>
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>

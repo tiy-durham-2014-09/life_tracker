@@ -1,0 +1,21 @@
+<h1><%= link_to 'Allo', welcome_index_path %></h1>
+<h4><%= link_to 'Sign Up Now!', new_person_path %></h4>
+
+<h2>Here are all the people</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @people.each do |person| %>
+      <tr>
+        <td><%= link_to person.name, person %></td>
+        <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

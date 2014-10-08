@@ -1,0 +1,36 @@
+<h1><%= link_to 'Allo', welcome_index_path %></h1>
+
+<h2>Listing all schools</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Start year</th>
+      <th>End year</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @schools.each do |school| %>
+      <tr>
+        <td><%= school.name %></td>
+        <td><%= school.start_year %></td>
+        <td><%= school.end_year %></td>
+        <td><%= school.city %></td>
+        <td><%= school.state %></td>
+        <td><%= school.country %></td>
+        <td><%= link_to 'Show', school %></td>
+        <td><%= link_to 'Edit', edit_school_path(school) %></td>
+        <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New School', new_school_path %>
