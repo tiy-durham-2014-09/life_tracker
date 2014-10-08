@@ -1,0 +1,65 @@
+<h1>Life-Tracker</h1>
+<h2>Listing of schools and major life events.</h2>
+
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @people.each do |person| %>
+      <tr>
+
+        <td><%= person.name %></td>
+<td>
+        <p>
+          <strong>Schools:</strong>
+        <ul>
+          <% if person.schools[0] %>
+              <% person.schools.order(:ending_year).reverse_order.each do |schools| %>
+                  <li>
+                    <%= schools.name %>: <%= schools.beginning_year %> to <%= schools.ending_year %>
+                    <%= link_to "New", new_school_path(schools) %>
+                  </li>
+              <% end %>
+          <% else %>
+              <%= link_to "New", new_school_path(person.schools) %>
+          <% end %>
+        </ul>
+        </p>
+
+        <p>
+          <strong>Life Events:</strong>
+        <ul>
+          <% if person.life_events[0] %>
+
+              <% person.life_events.each do |life_events| %>
+                  <li>
+                    <%= life_events.year %> <%= life_events.title %>: <%= life_events.description %>
+                    <%= link_to "New", new_life_event_path(life_events) %>
+                  </li>
+              <% end %>
+          <% else %>
+              <%= link_to "New", new_life_event_path(person.life_events) %>
+          <% end %>
+        </ul>
+        </p>
+</td>
+
+
+
+        <td><%= link_to 'Show', person %></td>
+        <td><%= link_to 'Edit', edit_person_path(person) %></td>
+        <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Person', new_person_path %>
+
