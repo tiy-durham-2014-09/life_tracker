@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @person.name %>
+</p>
+
+School(s) attended: <!--code for displaying owned schools needed here-->
+<br>Life events: <!--code for displaying owned life events needed here-->
+<br>
+<br>
+<div class="footer">
+    <%= link_to 'Edit', edit_person_path(@person) %> |
+    <%= link_to 'Back', people_path %>
+</div>

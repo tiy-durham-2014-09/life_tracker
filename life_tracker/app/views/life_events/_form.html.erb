@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <!--<div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
@@ -25,5 +25,40 @@
   </div>
   <div class="actions">
     <%= f.submit %>
-  </div>
+  </div>-->
+
+
+
+      <div class="row">
+        <div class="large-6 columns">
+          <label>Title<br>
+            <%= f.text_field :title %>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-2 columns">
+          <label>Year<br>
+            <%= f.number_field :year %>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-8 columns">
+          <label>Description<br>
+            <%= f.text_area :description, :placeholder => "Limited to 140 characters"%>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="actions">
+         <%= f.submit %>
+        </div>
+      </div>
+
+
+
+
+
 <% end %>
+
