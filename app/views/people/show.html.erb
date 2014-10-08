@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @person.name %>
+</p>
+
+<% if @person.schools[0] %>
+    <p>
+      <strong>Schools:</strong>
+      <ul>
+        <% @person.schools.order(:end_year).reverse_order.each do |school| %>
+            <li>
+              <%= school.name %>: <%= school.end_year %>
+              <%= link_to "Edit", edit_school_path(school) %>
+            </li>
+        <% end %>
+      </ul>
+    </ul>
+    </p>
+<% end %>
+
+<% if @person.life_events[0] %>
+    <p>
+      <strong>Life Events:</strong>
+    <ul>
+      <% @person.life_events.order(:year).reverse_order.each do |life_event| %>
+          <li>
+            <%= life_event.title %>: <%= life_event.year %>
+            <%= link_to "Edit", edit_life_event_path(life_event) %>
+          </li>
+      <% end %>
+    </ul>
+    </p>
+<% end %>
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>

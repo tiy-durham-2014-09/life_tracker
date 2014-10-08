@@ -1,5 +1,18 @@
 <p id="notice"><%= notice %></p>
 
+
+<p>
+  <strong>Person ID:</strong>
+  <%= @school.person_id %>
+</p>
+
+<% if @school.person %>
+    <p>
+      <strong>Person:</strong>
+      <%= link_to @school.person, @school.person %>
+    </p>
+<% end %>
+
 <p>
   <strong>Name:</strong>
   <%= @school.name %>
@@ -13,6 +26,21 @@
 <p>
   <strong>End year:</strong>
   <%= @school.end_year %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @school.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @school.state %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @school.country %>
 </p>
 
 <%= link_to 'Edit', edit_school_path(@school) %> |
