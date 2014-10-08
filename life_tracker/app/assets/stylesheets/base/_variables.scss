@@ -42,7 +42,7 @@ $base-accent-color: $blue;
 $base-link-color: yellow;
 $hover-link-color: lighten($base-link-color, 100);
 $base-button-color: $base-link-color;
-$hover-button-color: $hover-link-color;
+$hover-button-color: darken($base-button-color, 20);
 
 // Flash Colors
 $alert-color: $light-yellow;
