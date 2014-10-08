@@ -1,6 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Person ID:</strong>
+  <%= @school.person_id %>
+</p>
+
+<% if @school.person %>
+  <p>
+    <strong>Person:</strong>
+    <%= link_to @school.person, @school.person %>
+  </p>
+<% end %>
+
+<p>
   <strong>Name:</strong>
   <%= @school.name %>
 </p>

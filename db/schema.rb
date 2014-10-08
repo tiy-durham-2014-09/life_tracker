@@ -11,12 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141007014135) do
+ActiveRecord::Schema.define(version: 20141007194841) do
 
   create_table "life_events", force: true do |t|
     t.string   "title"
     t.integer  "year"
     t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "people", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -27,6 +32,11 @@ ActiveRecord::Schema.define(version: 20141007014135) do
     t.integer  "ending_year"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
   end
 
+  add_index "schools", ["person_id"], name: "index_schools_on_person_id"
+  add_index "life_events", ["person_id"], name: "index_life_events_on_person_id"
 end

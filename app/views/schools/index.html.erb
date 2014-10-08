@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Person</th>
       <th>Name</th>
       <th>Beginning year</th>
       <th>Ending year</th>
@@ -13,6 +14,11 @@
   <tbody>
     <% @schools.each do |school| %>
       <tr>
+        <td>
+          <% if school.person %>
+          <%= link_to school.person, school.person %>
+          <% end %>
+        </td>
         <td><%= school.name %></td>
         <td><%= school.beginning_year %></td>
         <td><%= school.ending_year %></td>
