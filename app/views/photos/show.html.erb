@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="small-12 columns">
+    <%= image_tag @photo.image.url(:medium), :class => "full-size" %>
+    <div class="image-caption"><%= @photo.caption %></div>
+  </div>
+</div>
+
+<%= button_to "Edit", edit_photo_path %>
