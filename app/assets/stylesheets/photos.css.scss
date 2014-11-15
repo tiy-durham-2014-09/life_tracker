@@ -1,0 +1,22 @@
+// Place all the styles related to the Photos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.image-caption {
+	font-family: Bebas; src: url('bebas.TTF');
+	font-size: 18px;
+    color: #5a5a5a !important;	
+}
+
+img.thumbs {
+	border-radius: 50%;
+	background-color: orange;
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+}
+
+img.full-size {
+	border-radius: 0;
+}
